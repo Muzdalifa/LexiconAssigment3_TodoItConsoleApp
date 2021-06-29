@@ -102,7 +102,8 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
         }
 
         [Theory]
-        [InlineData("","Ali")]
+        [InlineData(null,"Ali")]
+        [InlineData("", "Ali")]
         [InlineData("", "")]
         public void SetIncorrectModelInputThrowException(string firstName, string lastName)
         {            
@@ -139,7 +140,6 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
 
             //Asert
             Assert.NotNull(person1);
-
         }
     }
 }

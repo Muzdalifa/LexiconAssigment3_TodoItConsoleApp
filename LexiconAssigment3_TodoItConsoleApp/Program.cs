@@ -11,10 +11,19 @@ namespace LexiconAssigment3_TodoItConsoleApp
             //Console.WriteLine(firstPerson.FirstName);
             //Console.WriteLine(firstPerson.LastName)
 
-            Person person1 = new Person("Ana", "Mikael");
-            Console.WriteLine(person1.PrintInfo());
+            //Person person1 = new Person("", "");
+            //Console.WriteLine(person1.PrintInfo());
             Person person2 = new Person("Sune", "Andersson");
             Console.WriteLine(person2.PrintInfo());
+
+            Console.WriteLine("TODO:");
+            Todo todo = new Todo(1, "Going supermarket");
+            Console.WriteLine(todo.PrintInfo());
+            Todo todo2 = new Todo(2, "Cooking food");
+            Console.WriteLine(todo2.PrintInfo());
+
+
+
 
         }
 
