@@ -24,11 +24,18 @@ namespace LexiconAssigment3_TodoItConsoleApp
             //Console.WriteLine(todo2.PrintInfo());
 
             //PersonSequencer 
-            Console.WriteLine(PersonSequencer.PersonId);
-            Console.WriteLine(PersonSequencer.NextPersonId());
-            Console.WriteLine(PersonSequencer.NextPersonId());
-            Console.WriteLine(PersonSequencer.Reset());
-            Console.WriteLine(PersonSequencer.NextPersonId());
+            //Console.WriteLine(PersonSequencer.PersonId);
+            //Console.WriteLine(PersonSequencer.NextPersonId());
+            //Console.WriteLine(PersonSequencer.NextPersonId());
+            //Console.WriteLine(PersonSequencer.Reset());
+            //Console.WriteLine(PersonSequencer.NextPersonId());
+
+            //TodoSequencer 
+            Console.WriteLine(TodoSequencer.TodoId);
+            Console.WriteLine(TodoSequencer.NextTodoId());
+            Console.WriteLine(TodoSequencer.NextTodoId());
+            Console.WriteLine(TodoSequencer.Reset());
+            Console.WriteLine(TodoSequencer.NextTodoId());
 
 
 

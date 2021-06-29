@@ -30,9 +30,6 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
         public static int Reset()
         {
             return personId = 0;
-        }
-
-
- 
+        } 
     }
 }
