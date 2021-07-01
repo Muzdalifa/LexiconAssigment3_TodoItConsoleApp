@@ -34,47 +34,47 @@ namespace LexiconAssigment3_TodoItConsoleApp
             //Console.WriteLine(TodoSequencer.NextTodoId());
 
             //People
-            People p1 = new People();
-            //p1.AddPerson(new Person(1,"Muzda", "Ali"));
-            //p1.AddPerson(new Person(2,"Maryam", "Kassim"));
-            //p1.AddPerson(new Person(3,"Juma", "Shaame"));
+            //People p1 = new People();
 
-            //foreach (var item in People.Person)
+            //p1.AddPerson(new Person(1, "Muzda", "Ali"));
+            //p1.AddPerson(new Person(2, "Selma", "Hamza"));
+            //p1.AddPerson(new Person(3, "Ana", "Peter"));
+            //Console.WriteLine(p1.FindById(1));
+
+            //Person[] person1 = p1.FindAll();
+
+            //foreach (var item in person1)
             //{
             //    Console.WriteLine(item.PrintInfo());
             //}
 
-            p1.AddPerson(new Person(1, "Muzda", "Ali"));
-            p1.AddPerson(new Person(2, "Selma", "Hamza"));
-            p1.AddPerson(new Person(3, "Ana", "Peter"));
-            //Console.WriteLine(p1.FindById(1));
+            //p1.Clear();
+            //Console.WriteLine($"Check length: {People.Person.Length}");
 
-            Person[] person1 = p1.FindAll();
+            //p1.AddPerson(new Person(1, "Muzda", "Ali"));
+            //p1.AddPerson(new Person(2, "Selma", "Hamza"));
+            //p1.AddPerson(new Person(3, "Ana", "Peter"));
+            ////Console.WriteLine(p1.FindById(1));
 
-            foreach (var item in person1)
+            //Person[] person2 = p1.FindAll();
+
+            //foreach (var item in person2)
+            //{
+            //    Console.WriteLine(item.PrintInfo());
+            //}
+
+            //TodoItems
+            TodoItems todoItems = new TodoItems();
+            todoItems.AddTodo(new Todo(1, "Going supermarket"));
+            todoItems.AddTodo(new Todo(2, "Doing assignment"));
+            todoItems.AddTodo(new Todo(3, "Greet friends"));
+          
+            Todo[] result = todoItems.FindAll();
+            foreach (var item in result)
             {
                 Console.WriteLine(item.PrintInfo());
             }
-
-            //Person[] firstPerson = p1.AddPerson(new Person(1, "Muzda", "Ali"));
-            //Console.WriteLine(firstPerson[0].PrintInfo());
-
-            p1.Clear();
-            Console.WriteLine($"Check length: {People.Person.Length}");
-
-            p1.AddPerson(new Person(1, "Muzda", "Ali"));
-            p1.AddPerson(new Person(2, "Selma", "Hamza"));
-            p1.AddPerson(new Person(3, "Ana", "Peter"));
-            //Console.WriteLine(p1.FindById(1));
-
-            Person[] person2 = p1.FindAll();
-
-            foreach (var item in person2)
-            {
-                Console.WriteLine(item.PrintInfo());
-            }
-
-
+            Console.WriteLine(result.Length);
 
 
 

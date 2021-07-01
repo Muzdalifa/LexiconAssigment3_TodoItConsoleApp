@@ -33,7 +33,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
         //[Theory]
         //[MemberData(typeof(GetPerson))]
         [Fact]
-        public void SizeWorkCorrectly()
+        public void ArraySizeWorkCorrectly()
         {
             //Arrange
             People p1 = new People();
