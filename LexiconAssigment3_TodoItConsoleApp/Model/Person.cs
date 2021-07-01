@@ -7,13 +7,13 @@ namespace LexiconAssigment3_TodoItConsoleApp.Model
     public class Person
     {
         //Fields
-        private static int personCounter = 0;
+        //private static int personCounter = 0;
         private readonly int personId;
         private string firstName;
         private string lastName;
 
         //Properties
-        public static int PersonCounter { get { return personCounter; } }
+        //public static int PersonCounter { get { return personCounter; } }
         public int PersonId { get { return personId; } }
         public string FirstName
         {
@@ -48,9 +48,9 @@ namespace LexiconAssigment3_TodoItConsoleApp.Model
             }
         }
 
-        public Person(string firstName, string lastName)
+        public Person(int id, string firstName, string lastName)
         {
-            personId = ++personCounter;
+            personId = id;
             FirstName = firstName;
             LastName = lastName;
         }
