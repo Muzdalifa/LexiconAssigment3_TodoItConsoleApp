@@ -240,10 +240,40 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
             Todo[] result = todoItems.FindUnassignedTodoItems();
 
             //Assert
-            //Assert.Contains<Todo>(specificTodo2, result);
+            Assert.Contains<Todo>(specificTodo2, result);
             Assert.DoesNotContain<Todo>(specificTodo1, result);
             Assert.DoesNotContain<Todo>(specificTodo2, result);
             Assert.DoesNotContain<Todo>(specificTodo3, result);
+        }
+
+        [Fact]
+        public void RemoveItemInTodoItemsWorkCorrectly()
+        {
+            //Arrange
+            TodoItems todoItems = new TodoItems();
+            todoItems.AddTodo(new Todo(1, "Going supermarket"));
+            //todoItems.AddTodo(new Todo(2, "Doing assignment"));
+            //todoItems.AddTodo(new Todo(3, "Greet friends"));
+            //todoItems.AddTodo(new Todo(4, "Playing football"));
+            //todoItems.AddTodo(new Todo(5, "Going saloon to make hair"));
+
+            int id = 1;
+            //var expected1 = new Todo(1, "Going supermarket");
+            //Todo expected2 = new Todo(2, "Doing assignment");
+            //Todo expected3 = new Todo(3, "Greet friends");
+            //Todo expected4 = new Todo(4, "Playing football");
+            //Todo expected5 = new Todo(5, "Going saloon to make hair");
+
+            //Act
+            Todo[] result = todoItems.RemoveItemInTodoItems(id);
+
+            //Assert
+            //Assert.DoesNotContain(expected3, result);
+            //Assert.Contains<Todo>(expected1, result);
+            //Assert.Contains<Todo>(expected2, result);
+            //Assert.Contains<Todo>(expected4, result);
+            //Assert.Contains<Todo>(expected5, result);
+            Assert.Empty(result);
         }
     }
 }

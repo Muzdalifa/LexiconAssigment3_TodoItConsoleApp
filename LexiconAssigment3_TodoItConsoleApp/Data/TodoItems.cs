@@ -11,6 +11,10 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
 
         public static Todo[] Todo
         {
+            private set
+            {
+                todos = value;
+            }
             get { return todos; }
         }
 
@@ -65,6 +69,12 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
         public Todo[] FindUnassignedTodoItems()
         {
             return Array.FindAll(todos, (todo) => todo.Assignee == null);
+        }
+
+        public Todo[] RemoveItemInTodoItems(int id)
+        {
+            todos =  Array.FindAll(todos, todo => todo?.TodoId != id);
+            return todos;
         }
 
 
