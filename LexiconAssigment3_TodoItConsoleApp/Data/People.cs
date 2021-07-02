@@ -26,24 +26,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
 
         public Person FindById(int personId)
         {
-            try
-            {                
-                Person specificPerson = Array.Find(persons, p => p.PersonId == personId);
-                if(specificPerson != null)
-                {
-                    return specificPerson;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            catch (NullReferenceException)
-            {
-
-                Console.WriteLine( "Array is empty");
-                return null;
-            }    
+            return Array.Find(persons, p => p.PersonId == personId);
         }
 
         public Person[] AddPerson(Person person)
@@ -60,8 +43,6 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             //Resize array to initial value
             Array.Resize<Person>(ref persons, 0);
 
-            //Console.WriteLine($"Check this:  {persons.Length}");
-            //
             //reset index to 0 
             PersonSequencer.Reset();
         }

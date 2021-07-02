@@ -33,16 +33,15 @@ namespace LexiconAssigment3_TodoItConsoleApp.Model
         }
 
         public bool Done { 
-            private set
+            set
             {
                 done = value;
             }
             get { return done; }
         }
 
-        public int AssigneeId { get; set; }
-        public Person Assignee { get; set; }
-        
+        public Person Assignee { set; get ; }       
+        //public Person Assignee { set { assignee = value; } get { return assignee; } }
 
         //Constructors
         public Todo(int id, string description)
@@ -54,18 +53,11 @@ namespace LexiconAssigment3_TodoItConsoleApp.Model
 
             todoId = id;
             Description = description;
-
-        }
-
-        public Todo(int id, string description, bool done, Person assignee) :this(id, description)
-        {
-            Done = done;
-            Assignee = assignee;
         }
 
         public string PrintInfo()
         {
-            return $"{TodoId} : {Description} {(Done ? "YES" : "NO")}";
+            return $"{TodoId} : {Description} {Assignee?.PrintInfo()}  DONE: {(Done ? "YES" : "NO")}";
         }
 
     }

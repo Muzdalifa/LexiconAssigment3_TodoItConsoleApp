@@ -26,23 +26,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
 
         public Todo FindById(int todoId)
         {
-            try
-            {
-                Todo specificTodo = Array.Find(todos, p => p.TodoId == todoId);
-                if (specificTodo != null)
-                {
-                    return specificTodo;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            catch (NullReferenceException)
-            {
-                Console.WriteLine("Array is empty");
-                return null;
-            }
+            return Array.Find(todos, p => p.TodoId == todoId);
         }
 
         public Todo[] AddTodo(Todo todo)
@@ -58,11 +42,31 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
         {
             //Resize array to initial value
             Array.Resize<Todo>(ref todos, 0);
-
-            //Console.WriteLine($"Check this:  {todos.Length}");
-     
+            
             //reset index to 0 
             TodoSequencer.Reset();
         }
+
+        public Todo[] FindByDoneStatus(bool doneStatus)
+        {
+            return Array.FindAll(todos, (todo) => todo.Done == doneStatus); 
+        }
+
+        public Todo[] FindByAssignee(int personId)
+        {
+            return Array.FindAll(todos, (todo) => (todo.Assignee != null) ? todo.Assignee.PersonId == personId : false);
+        }
+
+        public Todo[] FindByAssignee(Person assignee)
+        {   //To check if the object is null I use (?) so it doesn't crush
+            return Array.FindAll(todos, (todo) => todo.Assignee?.PersonId == assignee.PersonId);
+        }
+
+        public Todo[] FindUnassignedTodoItems()
+        {
+            return Array.FindAll(todos, (todo) => todo.Assignee == null);
+        }
+
+
     }
 }

@@ -57,7 +57,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Model
 
         public string PrintInfo()
         {
-            return $"Person {personId} : {FirstName} {LastName}";
+            return $"PersonID {personId} : {FirstName} {LastName}";
         }
 
 

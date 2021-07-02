@@ -68,13 +68,51 @@ namespace LexiconAssigment3_TodoItConsoleApp
             todoItems.AddTodo(new Todo(1, "Going supermarket"));
             todoItems.AddTodo(new Todo(2, "Doing assignment"));
             todoItems.AddTodo(new Todo(3, "Greet friends"));
-          
+            todoItems.AddTodo(new Todo(4, "Playing football"));
+            todoItems.AddTodo(new Todo(5, "Going saloon to make hair"));
+
             Todo[] result = todoItems.FindAll();
-            foreach (var item in result)
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.PrintInfo());
+            //}
+
+            Todo specificTodo1 = todoItems.FindById(1);
+            //Properties that are not needed during object instantiation can be changed latter(like Asignee here )
+            //Add Assignee to Todo item
+            specificTodo1.Assignee = new Person(1, "Bellamy", "Donald");
+            specificTodo1.Done = true;
+            Todo specificTodo2 = todoItems.FindById(2);
+            specificTodo2.Assignee = new Person(2, "Octavia", "Donald");
+            specificTodo2.Done = true;
+            Todo specificTodo3 = todoItems.FindById(3); //by default Done is false
+            specificTodo3.Assignee = new Person(3, "Indra", "Koi");      
+            Console.WriteLine();
+
+            Console.WriteLine("Todo Find by Assignee ID ");
+            foreach (var item in todoItems.FindByAssignee(1))
             {
                 Console.WriteLine(item.PrintInfo());
             }
-            Console.WriteLine(result.Length);
+
+            Console.WriteLine("Todo Find by Assignee by Person object ");
+            Person person1 = new Person(2, "Octavia", "Donald");
+            foreach (var item in todoItems.FindByAssignee(person1))
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+
+            Console.WriteLine("Todo Done status = YES ");
+            foreach (var item in todoItems.FindByDoneStatus(true))
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+
+            Console.WriteLine("Unassigned Todo Items ");
+            foreach (var item in todoItems.FindUnassignedTodoItems())
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
 
 
 
