@@ -6,37 +6,19 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
 {
     public class PersonTest
     {
+        private readonly Person _person;
+        public PersonTest()
+        {
+            _person = new Person(1,"Maida","Ali");
+        }
         [Fact]
         public void SetFistNameWorkCorrect()
         {
             //Arrange
-            int id = 1;
-            string fistName = "Maida";
-            string lastName = "Ali";
             string expected = "Maida";
 
-            //act
-            Person person1 = new Person(id, fistName, lastName);
-            string actual = person1.FirstName;
-
-            //Assert
-            Assert.Equal(expected, actual);
-        }
-
-        /*see if firstName parameter really set first name and not lastname,
-        ie not to rearrange the field*/ 
-        [Fact]
-        public void SetFistNameWorInkCorrect() 
-        {
-            //Arrange
-            int id = 2;
-            string fistName = "Ali";
-            string lastName = "Maida";
-            string expected = "Maida";
-
-            //act
-            Person person1 = new Person(id, fistName, lastName);
-            string actual = person1.FirstName;
+            ////act
+            string actual = _person.FirstName;
 
             //Assert
             Assert.Equal(expected, actual);
@@ -46,33 +28,10 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
         public void SetLastNameWorkCorrect()
         {
             //Arrange
-            int id = 3;
-            string fistName = "Maida";
-            string lastName = "Ali";
             string expected = "Ali";
 
             //act
-            Person person1 = new Person(id, fistName, lastName);
-            string actual = person1.LastName;
-
-            //Assert
-            Assert.Equal(expected, actual);
-        }
-
-        /*see if lastName parameter really set last name and not firstName,
-        ie not to rearrange the names*/
-        [Fact]
-        public void SetLastNameWorInkCorrect()
-        {
-            //Arrange
-            int id = 4;
-            string fistName = "Ali";
-            string lastName = "Maida";
-            string expected = "Ali";
-
-            //act
-            Person person1 = new Person(id, fistName, lastName);
-            string actual = person1.LastName;
+            string actual = _person.LastName;
 
             //Assert
             Assert.Equal(expected, actual);
@@ -82,11 +41,10 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
         public void PersonIdWorkCorrect()
         {
             //Act
-            Person person1 = new Person(1,"Ana", "Mikael");
             Person person2 = new Person(2,"Sune", "Andersso");
 
             //ssert
-            Assert.True(person1.PersonId < person2.PersonId);
+            Assert.True(_person.PersonId < person2.PersonId);
         }
 
         [Fact]
@@ -98,10 +56,10 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
             string lastName = "Ali";
 
             //act
-            Person person1 = new Person(id,fistName, lastName);
-            string actual = person1.PrintInfo();
+            string actual = _person.PrintInfo();
 
             //Assert
+            Assert.Contains(id.ToString(), actual);
             Assert.Contains(fistName, actual);
             Assert.Contains(lastName, actual);
         }
@@ -137,16 +95,8 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
         [Fact]
         public void ConstructorContainsNotNullInfo()
         {
-            //Arrange
-            int id = 1;
-            string firstName = "Maida";
-            string lastName = "Ali"; 
-
-            //Act 
-            Person person1 = new Person(id, firstName, lastName);
-
             //Asert
-            Assert.NotNull(person1);
+            Assert.NotNull(_person);
         }
     }
 }

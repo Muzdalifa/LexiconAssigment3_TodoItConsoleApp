@@ -71,12 +71,15 @@ namespace LexiconAssigment3_TodoItConsoleApp
             todoItems.AddTodo(new Todo(4, "Playing football"));
             todoItems.AddTodo(new Todo(5, "Going saloon to make hair"));
 
-            Todo[] result = todoItems.FindAll();
-            Console.WriteLine("All Todo item:");
-            foreach (var item in result)
-            {
-                Console.WriteLine(item.PrintInfo());
-            }
+            //Todo[] result = todoItems.FindAll();
+            //Console.WriteLine("All Todo item:");
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.PrintInfo());
+            //}
+
+            Todo specificTodo = todoItems.FindById(20);
+            Console.WriteLine(specificTodo?.PrintInfo());
 
             //Todo specificTodo1 = todoItems.FindById(1);
             ////Properties that are not needed during object instantiation can be changed latter(like Asignee here )

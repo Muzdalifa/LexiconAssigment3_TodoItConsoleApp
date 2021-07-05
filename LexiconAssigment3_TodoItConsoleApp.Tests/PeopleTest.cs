@@ -106,5 +106,32 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
             Assert.Empty(People.Person);
             Assert.True(People.Person.Length == 0);
         }
+
+        [Fact]
+        public void RemovePersonWorkCorrectly()
+        {
+            //Arrange
+            //Arrange
+            People p1 = new People();
+            int id = 2;
+            Person removedPerson = new Person(2, "Selma", "Hamza");
+
+            Person expected1 = new Person(1, "Muzda", "Ali");
+            Person expected2 = new Person(3, "Ana", "Peter");
+
+            p1.AddPerson(new Person(1, "Muzda", "Ali"));
+            p1.AddPerson(new Person(2, "Selma", "Hamza"));
+            p1.AddPerson(new Person(3, "Ana", "Peter"));
+
+            //Act
+            Person[] result = p1.RemoveItemInPersonArray(id);
+
+            //Assert
+            Assert.True(result.Length == 2);
+
+            Assert.False(result[1].PersonId == removedPerson.PersonId);
+            Assert.True(result[0].PersonId == expected1.PersonId);
+            Assert.True(result[1].PersonId == expected2.PersonId);
+        }
     }
 }
