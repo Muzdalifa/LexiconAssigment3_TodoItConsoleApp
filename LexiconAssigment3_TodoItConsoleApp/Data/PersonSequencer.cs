@@ -11,7 +11,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
         public static int PersonId
         {
             private set
-            {   
+            {
                 //set the next personId
                 personId = NextPersonId();
             }

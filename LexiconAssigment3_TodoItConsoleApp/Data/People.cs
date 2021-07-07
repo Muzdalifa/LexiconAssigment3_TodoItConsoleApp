@@ -9,7 +9,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
     {
         private static Person[] persons = new Person[0];
 
-        public static Person[] Person 
+        public static Person[] Persons
         {
             get { return persons; }
         }
@@ -29,12 +29,13 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             return Array.Find(persons, p => p.PersonId == personId);
         }
 
-        public Person[] AddPerson(Person person)
-        {            
+        public Person[] AddPerson(string firstName, string lastName)
+        {
+            Person person = new Person(PersonSequencer.NextPersonId(), firstName, lastName);
             //Resizing array
-            Array.Resize<Person>(ref persons, PersonSequencer.NextPersonId());
+            Array.Resize<Person>(ref persons, Size() + 1);
             //Assign to the last index
-            persons[PersonSequencer.PersonId -1 ] = person;    
+            persons[Size() -1 ] = person;    
             return persons;            
         }
 
@@ -43,7 +44,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             //Resize array to initial value
             Array.Resize<Person>(ref persons, 0);
 
-            //reset index to 0 
+            ////reset index to 0 
             PersonSequencer.Reset();
         }
 

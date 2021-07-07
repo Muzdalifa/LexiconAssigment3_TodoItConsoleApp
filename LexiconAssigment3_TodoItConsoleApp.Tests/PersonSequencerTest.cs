@@ -8,17 +8,9 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
     public class PersonSequencerTest
     {
         [Fact]
-        public void InitializePersonIWorkCorrect()
-        {
-            //Assert
-            Assert.Equal(0, PersonSequencer.PersonId);
-        }
-
-        [Fact]
         public void NextPersonIdWorkcorrect()
         {
             //Assert
-            Assert.Equal(0, PersonSequencer.PersonId);
             Assert.Equal(1, PersonSequencer.NextPersonId());
             Assert.Equal(2, PersonSequencer.NextPersonId());
             Assert.Equal(3, PersonSequencer.NextPersonId());
@@ -28,7 +20,6 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
         [Fact]
         public void ResetPersonIdWorkCorrect()
         {
-            Assert.Equal(0, PersonSequencer.PersonId);
             Assert.Equal(1, PersonSequencer.NextPersonId());
             Assert.Equal(2, PersonSequencer.NextPersonId());
             Assert.Equal(3, PersonSequencer.NextPersonId());

@@ -258,11 +258,11 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
 
         public Todo[] TodoItemsTestData()
         {
-            _todoItems.AddTodo(new Todo(1, "Going supermarket"));
-            _todoItems.AddTodo(new Todo(2, "Doing assignment"));
-            _todoItems.AddTodo(new Todo(3, "Greet friends"));
-            _todoItems.AddTodo(new Todo(4, "Playing football"));
-            _todoItems.AddTodo(new Todo(5, "Going saloon to make hair"));
+            _todoItems.AddTodo("Going supermarket");
+            _todoItems.AddTodo("Doing assignment");
+            _todoItems.AddTodo("Greet friends");
+            _todoItems.AddTodo("Playing football");
+            _todoItems.AddTodo("Going saloon to make hair");
             return TodoItems.Todo;
         }
     }

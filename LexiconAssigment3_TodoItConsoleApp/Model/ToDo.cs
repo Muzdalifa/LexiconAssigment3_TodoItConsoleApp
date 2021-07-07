@@ -40,10 +40,9 @@ namespace LexiconAssigment3_TodoItConsoleApp.Model
             get { return done; }
         }
 
-        public Person Assignee { set; get ; }       
-        //public Person Assignee { set { assignee = value; } get { return assignee; } }
+        public Person Assignee { set; get ; }
 
-        //Constructors
+        //Constructor
         public Todo(int id, string description)
         {
             if (id <= 0)
