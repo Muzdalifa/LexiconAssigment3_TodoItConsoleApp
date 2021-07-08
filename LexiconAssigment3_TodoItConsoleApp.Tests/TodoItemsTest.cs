@@ -18,9 +18,6 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
         [Fact]
         public void AddTodoWorkCorrectly()
         {
-            //Arrange
-            _todoItems.Clear();
-
             //Act
             TodoItemsTestData();
 
@@ -33,7 +30,6 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
         public void ArraySizeWorkCorrectly()
         {
             //Arrange
-            _todoItems.Clear();
             TodoItemsTestData();
 
 
@@ -132,120 +128,114 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
             Assert.True(TodoItems.Todo.Length == 0);
         }
 
-        //[Fact]
-        //public void FindByDoneStatusTrueWorkCorrectly()
-        //{
-        //    //Arrange
-        //    TodoItemsTestData();
+        [Fact]
+        public void FindByDoneStatusTrueWorkCorrectly()
+        {
+            //Arrange
+            TodoItemsTestData();
 
-        //    Todo specificTodo1 = _todoItems.FindById(1);
-        //    specificTodo1.Done = true;
-        //    Todo specificTodo2 = _todoItems.FindById(2);
-        //    specificTodo2.Done = true;
-        //    Todo specificTodo3 = _todoItems.FindById(3); //by default Done is false
+            Todo specificTodo1 = _todoItems.FindById(1);
+            specificTodo1.Done = true;
+            Todo specificTodo2 = _todoItems.FindById(2);
+            specificTodo2.Done = true;
+            Todo specificTodo3 = _todoItems.FindById(3); //by default Done is false
 
 
-        //    //Act
-        //    Todo[] result = _todoItems.FindByDoneStatus(true);
-        //    //Assert
-        //    Assert.Contains<Todo>(specificTodo1, result);
-        //    Assert.Contains<Todo>(specificTodo2, result);
-        //    Assert.DoesNotContain<Todo>(specificTodo3, result);
-        //}
+            //Act
+            Todo[] result = _todoItems.FindByDoneStatus(true);
+            //Assert
+            Assert.Contains<Todo>(specificTodo1, result);
+            Assert.Contains<Todo>(specificTodo2, result);
+            Assert.DoesNotContain<Todo>(specificTodo3, result);
+        }
 
-        //[Fact]
-        //public void FindByDoneStatusFalseorWorkCorrectly()
-        //{
-        //    //Arrange
-        //    TodoItemsTestData();
-        //    Todo specificTodo1 = _todoItems.FindById(1);
-        //    specificTodo1.Done = true;
-        //    Todo specificTodo2 = _todoItems.FindById(2);
-        //    specificTodo2.Done = true;
-        //    Todo specificTodo3 = _todoItems.FindById(3); //by default Done is false
+        [Fact]
+        public void FindByDoneStatusFalseorWorkCorrectly()
+        {
+            //Arrange
+            TodoItemsTestData();
+            Todo specificTodo1 = _todoItems.FindById(1);
+            specificTodo1.Done = true;
+            Todo specificTodo2 = _todoItems.FindById(2);
+            specificTodo2.Done = true;
+            Todo specificTodo3 = _todoItems.FindById(3); //by default Done is false
 
-        //    //Act
-        //    Todo[] result = _todoItems.FindByDoneStatus(false);
-        //    //Assert
-        //    Assert.Contains<Todo>(specificTodo3, result);
-        //    Assert.DoesNotContain<Todo>(specificTodo1, result);
-        //    Assert.DoesNotContain<Todo>(specificTodo2, result);
-        //}
+            //Act
+            Todo[] result = _todoItems.FindByDoneStatus(false);
+            //Assert
+            Assert.Contains<Todo>(specificTodo3, result);
+            Assert.DoesNotContain<Todo>(specificTodo1, result);
+            Assert.DoesNotContain<Todo>(specificTodo2, result);
+        }
 
-        //[Fact]
-        //public void FindByAssigneeIDWorkkCorrectly()
-        //{
-        //    //Arrange
-        //    TodoItemsTestData();
+        [Fact]
+        public void FindByAssigneeIDWorkkCorrectly()
+        {
+            //Arrange
+            TodoItemsTestData();
 
-        //    Todo specificTodo1 = _todoItems.FindById(1);
-        //    specificTodo1.Assignee = new Person(1, "Bellamy", "Donald");
-        //    Todo specificTodo2 = _todoItems.FindById(2);
-        //    specificTodo2.Assignee = new Person(2, "Octavia", "Donald");
-        //    Todo specificTodo3 = _todoItems.FindById(3); //by default Done is false
-        //    specificTodo3.Assignee = new Person(3, "Indra", "Koi");
+            Todo specificTodo1 = _todoItems.FindById(1);
+            specificTodo1.Assignee = new Person(1, "Bellamy", "Donald");
+            Todo specificTodo2 = _todoItems.FindById(2);
+            specificTodo2.Assignee = new Person(2, "Octavia", "Donald");
+            Todo specificTodo3 = _todoItems.FindById(3); //by default Done is false
+            specificTodo3.Assignee = new Person(3, "Indra", "Koi");
 
-        //    //Act
-        //    Todo[] result = _todoItems.FindByAssignee(2);
+            //Act
+            Todo[] result = _todoItems.FindByAssignee(2);
 
-        //    //Assert
-        //    Assert.Contains<Todo>(specificTodo2, result);
-        //    Assert.DoesNotContain<Todo>(specificTodo1, result);
-        //}
+            //Assert
+            Assert.Contains<Todo>(specificTodo2, result);
+            Assert.DoesNotContain<Todo>(specificTodo1, result);
+        }
 
-        //[Fact]
-        //public void FindByAssigneeObjectCorrectly()
-        //{
-        //    //Arrange
-        //    TodoItemsTestData();
+        [Fact]
+        public void FindByAssigneeObjectCorrectly()
+        {
+            //Arrange
+            TodoItemsTestData();
 
-        //    Todo specificTodo1 = _todoItems.FindById(1);
-        //    specificTodo1.Assignee = new Person(1, "Bellamy", "Donald"); //ssign person to TodoId = 1;
+            Todo specificTodo1 = _todoItems.FindById(1);
+            specificTodo1.Assignee = new Person(1, "Bellamy", "Donald"); //ssign person to TodoId = 1;
 
-        //    Todo specificTodo2 = _todoItems.FindById(2);
-        //    specificTodo2.Assignee = new Person(2, "Octavia", "Donald"); //OCtavia has been assigned in two TodoID,
+            Todo specificTodo2 = _todoItems.FindById(2);
+            specificTodo2.Assignee = new Person(2, "Octavia", "Donald"); //OCtavia has been assigned in two TodoID,
 
-        //    Todo specificTodo3 = _todoItems.FindById(3); 
-        //    specificTodo3.Assignee = new Person(2, "Octavia", "Donald"); 
+            Todo specificTodo3 = _todoItems.FindById(3);
+            specificTodo3.Assignee = new Person(2, "Octavia", "Donald");
 
-        //    Person assigneeToFind = new Person(2, "Octavia", "Donald");
+            Person assigneeToFind = new Person(2, "Octavia", "Donald");
 
-        //    //Act
-        //    Todo[] result = _todoItems.FindByAssignee(assigneeToFind);
+            //Act
+            Todo[] result = _todoItems.FindByAssignee(assigneeToFind);
 
-        //    //Assert
-        //    //Assert.DoesNotContain<Todo>(specificTodo1, result);
-        //    //Assert.Contains<Todo>(specificTodo3, result);
-        //    //Assert.Contains<Todo>(specificTodo1, result);
-        //    Assert.True(result.Length == 2);
-        //}
+            //Assert
+            //Assert.DoesNotContain<Todo>(specificTodo1, result);
+            //Assert.Contains<Todo>(specificTodo3, result);
+            //Assert.Contains<Todo>(specificTodo1, result);
+            Assert.True(result.Length == 2);
+        }
 
-        //[Fact]
-        //public void FindUnassignedTodoItemsWorkCorrectly()
-        //{
-        //    //Arrange
-        //    TodoItemsTestData();
+        [Fact]
+        public void FindUnassignedTodoItemsWorkCorrectly()
+        {
+            //Arrange
+            TodoItemsTestData();
 
-        //    Todo specificTodo1 = _todoItems.FindById(1);
-        //    specificTodo1.Assignee = new Person(1, "Bellamy", "Donald");
+            Todo specificTodo1 = _todoItems.FindById(1);
+            specificTodo1.Assignee = new Person(1, "Bellamy", "Donald");
 
-        //    Todo specificTodo2 = _todoItems.FindById(2);
-        //    specificTodo2.Assignee = new Person(2, "Octavia", "Donald");
+            Todo specificTodo2 = _todoItems.FindById(2);
+            specificTodo2.Assignee = new Person(2, "Octavia", "Donald");
 
-        //    Todo specificTodo3 = _todoItems.FindById(3); //by default Done is false
-        //    specificTodo3.Assignee = new Person(3, "Indra", "Koi");
+            Todo specificTodo3 = _todoItems.FindById(3); //by default Done is false
+            specificTodo3.Assignee = new Person(3, "Indra", "Koi");
 
-        //    //Act
-        //    Todo[] result =_todoItems.FindUnassignedTodoItems();
+            //Act
+            Todo[] result = _todoItems.FindUnassignedTodoItems();
 
-        //    //Assert
-        //    //Assert.Contains<Todo>(specificTodo2, result);
-        //    //Assert.DoesNotContain<Todo>(specificTodo1, result);
-        //    //Assert.DoesNotContain<Todo>(specificTodo2, result);
-        //    //Assert.DoesNotContain<Todo>(specificTodo3, result);
-
-        //    Assert.True(result.Length == 2);
-        //}
+            Assert.True(result.Length == 2);
+        }
 
         //[Fact]
         //public void RemoveItemInTodoItemsWorkCorrectly()
@@ -276,6 +266,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
 
         public Todo[] TodoItemsTestData()
         {
+            _todoItems.Clear();
             _todoItems.AddTodo("Going supermarket");
             _todoItems.AddTodo("Doing assignment");
             _todoItems.AddTodo("Greet friends");

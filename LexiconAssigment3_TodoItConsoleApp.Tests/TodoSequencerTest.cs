@@ -11,27 +11,38 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
         [Fact]
         public void NextTodoIdWorkcorrect()
         {
-            //Assert
+            //Arrange
             Assert.Equal(0, TodoSequencer.Reset());
-            Assert.Equal(1, TodoSequencer.NextTodoId());
-            Assert.Equal(2, TodoSequencer.NextTodoId());
-            Assert.Equal(3, TodoSequencer.NextTodoId());
-            Assert.Equal(4, TodoSequencer.NextTodoId());
+
+            //Act
+            int nextTodo1 = TodoSequencer.NextTodoId();
+            int nextTodo2 = TodoSequencer.NextTodoId();
+
+            int nextTodo3 = TodoSequencer.NextTodoId();
+            int nextTodo4 = TodoSequencer.NextTodoId();
+
+            //Assert
+            Assert.True(nextTodo1 < nextTodo2);
+            Assert.True(nextTodo3 < nextTodo4);
+            Assert.True(nextTodo2 < nextTodo4);
         }
 
         [Fact]
         public void ResetTodoIdWorkCorrect()
         {
-            Assert.Equal(0, TodoSequencer.Reset());
-            Assert.Equal(1, TodoSequencer.NextTodoId());
-            Assert.Equal(2, TodoSequencer.NextTodoId());
-            Assert.Equal(3, TodoSequencer.NextTodoId());
-            Assert.Equal(0, TodoSequencer.Reset());
-            Assert.Equal(1, TodoSequencer.NextTodoId());
-            Assert.Equal(2, TodoSequencer.NextTodoId());
-            Assert.Equal(3, TodoSequencer.NextTodoId());
-            Assert.Equal(0, TodoSequencer.Reset());
+            //Act
+            int resultOFClearing1 = TodoSequencer.Reset();
+            int nextTodo1 = TodoSequencer.NextTodoId();
+            int nextTodo2 = TodoSequencer.NextTodoId();
+            int resultOFClearing2 = TodoSequencer.Reset();
+            int nextTodo3 = TodoSequencer.NextTodoId();
 
+            //Assert
+            Assert.Equal(0, TodoSequencer.Reset());
+            Assert.True(resultOFClearing1 == 0);
+            Assert.True(nextTodo1 == nextTodo3);
+            Assert.True(resultOFClearing2 == 0);
+            Assert.True(nextTodo1 < nextTodo2);
         }
     }
 }

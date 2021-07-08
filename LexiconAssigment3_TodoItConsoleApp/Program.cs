@@ -112,6 +112,7 @@ namespace LexiconAssigment3_TodoItConsoleApp
 
             Console.WriteLine("Todo with id 3 is :");
             Todo specificTodo = todoItems.FindById(3);
+            
             Console.WriteLine(specificTodo?.PrintInfo());
             Console.WriteLine("\n");
 
@@ -132,44 +133,71 @@ namespace LexiconAssigment3_TodoItConsoleApp
             }
             Console.WriteLine("\n");
 
-            //Todo specificTodo1 = todoItems.FindById(1);
-            ////Add Assignee to Todo item
-            //specificTodo1.Assignee = new Person(1, "Bellamy", "Donald");
-            //specificTodo1.Done = true; //Properties that are not needed during object instantiation can be changed latter(like Asignee here )
-            //Todo specificTodo2 = todoItems.FindById(2);
-            //specificTodo2.Assignee = new Person(2, "Octavia", "Donald");
-            //specificTodo2.Done = true;
-            //Todo specificTodo3 = todoItems.FindById(3); //by default Done is false
-            //specificTodo3.Assignee = new Person(3, "Indra", "Koi");
+            //Retrieve specific TodoId and assign it todo status and assignee
+            Todo specificTodo1 = todoItems.FindById(1);
+            specificTodo1.Assignee = new Person(1, "Bellamy", "Donald");
+            specificTodo1.Done = true; //Properties that are not needed during object instantiation can be changed latter(like Asignee here )
+            
+            Todo specificTodo2 = todoItems.FindById(2);
+            specificTodo2.Assignee = new Person(2, "Octavia", "Donald");
+            specificTodo2.Done = true;
+            
+            Todo specificTodo3 = todoItems.FindById(3); //by default Done is false
+            specificTodo3.Assignee = new Person(3, "Indra", "Koi");
+            
+            Console.WriteLine("Change Todo status value");
+            
+            //print info after changing the value of Todo status
+            foreach (var item in todoItems.FindAll())
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
-            //Console.WriteLine("----------Todo Find by Assignee ID 1----------");
-            //foreach (var item in todoItems.FindByAssignee(1))
-            //{
-            //    Console.WriteLine(item.PrintInfo());
-            //}
-            //Console.WriteLine("\n");
+            //print info with Todo status = TRUE
+            Console.WriteLine("Todo Done status = YES : ");
+            foreach (var item in todoItems.FindByDoneStatus(true))
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
-            //Console.WriteLine("----------Find Todo using Find by Assignee method by Person object ((2, \"Octavia\", \"Donald\"))---------- ");
-            //Person person1 = new Person(2, "Octavia", "Donald");
-            //foreach (var item in todoItems.FindByAssignee(person1))
-            //{
-            //    Console.WriteLine(item.PrintInfo());
-            //}
-            //Console.WriteLine("\n");
+            //print info with Todo status = FALSE
+            Console.WriteLine("Todo Done status = NO : ");
+            foreach (var item in todoItems.FindByDoneStatus(false))
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
-            //Console.WriteLine("----------Todo Done status = YES---------- ");
-            //foreach (var item in todoItems.FindByDoneStatus(true))
-            //{
-            //    Console.WriteLine(item.PrintInfo());
-            //}
-            //Console.WriteLine("\n");
 
-            //Console.WriteLine("----------Unassigned Todo Items----------");
-            //foreach (var item in todoItems.FindUnassignedTodoItems())
-            //{
-            //    Console.WriteLine(item.PrintInfo());
-            //}
-            //Console.WriteLine("\n");
+            //Find Todo by assignee id
+            Console.WriteLine("Find  Todo using Assignee ID = 1 : ");
+            
+            foreach (var item in todoItems.FindByAssignee(1))
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
+
+            //Find Todo by assignee object
+            Console.WriteLine("Find Todo using Find by Assignee method by Person object ((2, \"Octavia\", \"Donald\"))");
+            
+            Person person1 = new Person(2, "Octavia", "Donald");
+            
+            foreach (var item in todoItems.FindByAssignee(person1))
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
+
+
+            Console.WriteLine("Unassigned Todo Items");
+            foreach (var item in todoItems.FindUnassignedTodoItems())
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
             //todoItems.RemoveItemInTodoItems(2);
 

@@ -62,29 +62,29 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             TodoSequencer.Reset();
         }
 
-        ////Returns array with objects that has a matching done status.
-        //public Todo[] FindByDoneStatus(bool doneStatus)
-        //{
-        //    return Array.FindAll(todos, (todo) => todo.Done == doneStatus); 
-        //}
+        //Returns array with objects that has a matching done status.
+        public Todo[] FindByDoneStatus(bool doneStatus)
+        {
+            return Array.FindAll(todos, (todo) => todo.Done == doneStatus);
+        }
 
-        ////Returns array with objects that has an assignee with a personId matching.
-        //public Todo[] FindByAssignee(int personId)
-        //{
-        //    return Array.FindAll(todos, (todo) => (todo.Assignee != null) ? todo.Assignee.PersonId == personId : false);
-        //}
+        //Returns array with objects that has an assignee with a personId matching.
+        public Todo[] FindByAssignee(int personId)
+        {
+            return Array.FindAll(todos, (todo) => (todo.Assignee != null) ? todo.Assignee.PersonId == personId : false);
+        }
 
-        ////Returns array with objects that has sent in Person.
-        //public Todo[] FindByAssignee(Person assignee)
-        //{   //To check if the object is null I use (?) so it doesn't crush
-        //    return Array.FindAll(todos, (todo) => todo.Assignee?.PersonId == assignee.PersonId);
-        //}
+        //Returns array with objects that has sent in Person.
+        public Todo[] FindByAssignee(Person assignee)
+        {   //To check if the object is null I use (?) so it doesn't crush
+            return Array.FindAll(todos, (todo) => todo.Assignee?.PersonId == assignee.PersonId);
+        }
 
-        ////Returns an array of objects that does not have an assignee set
-        //public Todo[] FindUnassignedTodoItems()
-        //{
-        //    return Array.FindAll(todos, (todo) => todo.Assignee == null);
-        //}
+        //Returns an array of objects that does not have an assignee set
+        public Todo[] FindUnassignedTodoItems()
+        {
+            return Array.FindAll(todos, (todo) => todo.Assignee == null);
+        }
 
         //public Todo[] RemoveItemInTodoItems(int id)
         //{
