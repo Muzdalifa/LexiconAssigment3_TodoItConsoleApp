@@ -11,49 +11,48 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
 
         public static Todo[] Todo
         {
-            private set
-            {
-                todos = value;
-            }
             get { return todos; }
         }
 
+        //returns the length of Todo array
         public int Size()
         {
             return todos.Length;
         }
 
+        //return Todo array
         public Todo[] FindAll()
         {
             return todos;
         }
 
+        //returns todo that has a matching personId as the passed in parameter.
         public Todo FindById(int todoId)
         {
-            //Todo specificTodo = Array.Find(todos, p => p.TodoId == todoId);
-            //if (specificTodo != null)
-            //{
-            //    return specificTodo;
-            //}
-            //else
-            //{
-            //    //throw new NullReferenceException("The id is not in the list of Todo.");
-            //    return null;
-            //}
-
-            //Array.Find() by default return null if it doesnt found.
+            //Array.Find() by default return null if it doesn't found.
             return Array.Find(todos, p => p.TodoId == todoId);
         }
 
-        public Todo[] AddTodo(Todo todo)
+        //creates a new todo, adds the newly created object in the array and then return the created object.
+        public Todo[] AddTodo(string description)
         {
-            //Resizing array
-            Array.Resize<Todo>(ref todos, TodoSequencer.NextTodoId());
-            //Assign value to the last index
-            todos[TodoSequencer.TodoId - 1] = todo;
+            //if persons array is empty we start with id 1
+            if (todos.Length == 0)
+            {
+                TodoSequencer.Reset();
+            }
+            Todo todo = new Todo(TodoSequencer.NextTodoId(), description); 
+
+            //Resizing todos array
+            Array.Resize<Todo>(ref todos, Size() + 1);
+
+            //Assign added todo to the last index of the array
+            todos[Size() - 1] = todo;
+
             return todos;
         }
 
+        //clears all Person objects from the Person array
         public void Clear()
         {
             //Resize array to initial value
@@ -63,24 +62,25 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             TodoSequencer.Reset();
         }
 
-        //– Returns array with objects that has a matching done status.
+        //Returns array with objects that has a matching done status.
         public Todo[] FindByDoneStatus(bool doneStatus)
         {
-            return Array.FindAll(todos, (todo) => todo.Done == doneStatus); 
+            return Array.FindAll(todos, (todo) => todo.Done == doneStatus);
         }
 
-        //– Returns array with objects that has an assignee with a personId matching.
+        //Returns array with objects that has an assignee with a personId matching.
         public Todo[] FindByAssignee(int personId)
         {
             return Array.FindAll(todos, (todo) => (todo.Assignee != null) ? todo.Assignee.PersonId == personId : false);
         }
 
-        //– Returns array with objects that has sent in Person.
+        //Returns array with objects that has sent in Person.
         public Todo[] FindByAssignee(Person assignee)
         {   //To check if the object is null I use (?) so it doesn't crush
             return Array.FindAll(todos, (todo) => todo.Assignee?.PersonId == assignee.PersonId);
         }
 
+        //Returns an array of objects that does not have an assignee set
         public Todo[] FindUnassignedTodoItems()
         {
             return Array.FindAll(todos, (todo) => todo.Assignee == null);
@@ -88,7 +88,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
 
         public Todo[] RemoveItemInTodoItems(int id)
         {
-            todos =  Array.FindAll(todos, todo => todo?.TodoId != id);
+            todos = Array.FindAll(todos, todo => todo?.TodoId != id);
             return todos;
         }
     }

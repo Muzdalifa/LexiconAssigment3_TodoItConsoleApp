@@ -6,20 +6,19 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
 {
     public class TodoSequencer
     {
-        //Set initial todoId value to 0
-        private static int todoId = 0;
-        public static int TodoId
-        {
-            private set
-            {
-                //set the next todoId
-                todoId = NextTodoId();
-            }
-            get
-            {
-                return todoId;
-            }
-        }
+        private static int todoId;
+        //public static int TodoId //To be deleted
+        //{
+        //    private set
+        //    {
+        //        //set the next todoId
+        //        todoId = NextTodoId();
+        //    }
+        //    get
+        //    {
+        //        return todoId;
+        //    }
+        //}
 
         //increment todoId and return the next todoId value.
         public static int NextTodoId()

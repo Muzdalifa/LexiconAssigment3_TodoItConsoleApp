@@ -77,24 +77,5 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
             //Assert
             Assert.Equal("Please fill the description.", actual.Message);
         }
-
-        [Fact]
-        public void SetSameIdThrowException()
-        {
-            //Arrange
-            int id1 = 10;
-            string description1 = "Going to dentist.";
-            int id2 = 10;
-            string description2 = "Going to School.";
-
-            //Act
-            Todo todo1 = new Todo(id1, description1);
-            Todo todo2 = new Todo(id2, description2);
-
-            //TODO
-            //Comparer id between object 
-
-        }
-
     }
 }
