@@ -9,17 +9,20 @@ namespace LexiconAssigment3_TodoItConsoleApp
         static void Main(string[] args)
         {
             //Person
+            Console.WriteLine("------Person------");
             Person firstePrson = new Person(1, "Ali", "Kassim");
             Console.WriteLine(firstePrson.PrintInfo());
             Person secondPerson = new Person(2, "Sune", "Andersson");
             Console.WriteLine(secondPerson.PrintInfo());
+            Console.WriteLine("\n");
 
-            ////Todo
-            //Console.WriteLine("TODO:");
-            //Todo todo = new Todo(1, "Going supermarket");
-            //Console.WriteLine(todo.PrintInfo());
-            //Todo todo2 = new Todo(2, "Cooking food");
-            //Console.WriteLine(todo2.PrintInfo());
+            //Todo
+            Console.WriteLine("------Todo------");
+            Todo todo = new Todo(1, "Going supermarket");
+            Console.WriteLine(todo.PrintInfo());
+            Todo todo2 = new Todo(2, "Cooking food");
+            Console.WriteLine(todo2.PrintInfo());
+            Console.WriteLine("\n");
 
             ////PersonSequencer
             ////Console.WriteLine(PersonSequencer.PersonId);
