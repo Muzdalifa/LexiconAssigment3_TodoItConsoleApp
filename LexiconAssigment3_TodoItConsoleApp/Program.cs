@@ -33,12 +33,13 @@ namespace LexiconAssigment3_TodoItConsoleApp
             Console.WriteLine(PersonSequencer.NextPersonId());
             Console.WriteLine("\n");
 
-            ////TodoSequencer
-            ////Console.WriteLine(TodoSequencer.TodoId);
-            //Console.WriteLine(TodoSequencer.NextTodoId());
-            //Console.WriteLine(TodoSequencer.NextTodoId());
-            //Console.WriteLine(TodoSequencer.Reset());
-            //Console.WriteLine(TodoSequencer.NextTodoId());
+            //TodoSequencer
+            Console.WriteLine("------TodoSequencer------");
+            //Console.WriteLine(TodoSequencer.TodoId);
+            Console.WriteLine(TodoSequencer.NextTodoId());
+            Console.WriteLine(TodoSequencer.NextTodoId());
+            Console.WriteLine(TodoSequencer.Reset());
+            Console.WriteLine(TodoSequencer.NextTodoId());
 
             ////People
             //People p1 = new People();
