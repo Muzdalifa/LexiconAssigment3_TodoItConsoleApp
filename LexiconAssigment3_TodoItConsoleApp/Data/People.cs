@@ -14,7 +14,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             get { return persons; }
         }
 
-        //return the length of the array
+        //return the length of Person array
         public int Size()
         {
             return persons.Length;
@@ -32,7 +32,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             return Array.Find(persons, p => p.PersonId == personId);
         }
 
-        //reates a new Person, adds the newly created object in the array and then return the created object.
+        //creates a new Person, adds the newly created object in the array and then return the created object.
         public Person[] AddPerson(string firstName, string lastName)
         {
             //if persons array is empty we start with id 1
@@ -45,7 +45,7 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             //Resizing array
             Array.Resize<Person>(ref persons, Size() + 1);
 
-            //Assign added person to the last index of the array
+            //Assign added persons to the last index of the array
             persons[Size() -1 ] = person;    
 
             return persons;            

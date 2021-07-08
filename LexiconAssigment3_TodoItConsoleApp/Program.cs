@@ -93,26 +93,44 @@ namespace LexiconAssigment3_TodoItConsoleApp
             }
             Console.WriteLine("\n");
 
-            ////TodoItems
-            //TodoItems todoItems = new TodoItems();
-            //todoItems.AddTodo("Going supermarket");
-            //todoItems.AddTodo("Doing assignment");
-            //todoItems.AddTodo("Greet friends");
-            //todoItems.AddTodo("Playing football");
-            //todoItems.AddTodo("Going saloon to make hair");
+            //TodoItems
+            TodoItems todoItems = new TodoItems();
+            todoItems.AddTodo("Going supermarket");
+            todoItems.AddTodo("Doing assignment");
+            todoItems.AddTodo("Greet friends");
+            todoItems.AddTodo("Playing football");
+            todoItems.AddTodo("Going saloon to make hair");
 
-            //Todo[] result = todoItems.FindAll();
+            Todo[] result = todoItems.FindAll();
 
-            //Console.WriteLine("----------Find all Todo items:----------");
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine(item.PrintInfo());
-            //}
-            //Console.WriteLine("\n");
+            Console.WriteLine("Find all Todo items: ");
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
-            //Console.WriteLine("----------Todo with id 3 is :----------");
-            //Todo specificTodo = todoItems.FindById(3);
-            //Console.WriteLine(specificTodo?.PrintInfo());
+            Console.WriteLine("Todo with id 3 is :");
+            Todo specificTodo = todoItems.FindById(3);
+            Console.WriteLine(specificTodo?.PrintInfo());
+            Console.WriteLine("\n");
+
+            todoItems.Clear();
+            Console.WriteLine($"Legth of Todo array after calling Clear method for the first time: {todoItems.Size()}");
+
+            Console.WriteLine("New Todo added to the Person array :");
+            todoItems.AddTodo("Going supermarket");
+            todoItems.AddTodo("Doing assignment");
+            todoItems.AddTodo("Greet friends");
+            todoItems.AddTodo("Playing football");
+            todoItems.AddTodo("Going saloon to make hair");
+
+
+            foreach (var item in todoItems.FindAll())
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
             //Todo specificTodo1 = todoItems.FindById(1);
             ////Add Assignee to Todo item
