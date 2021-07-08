@@ -40,43 +40,58 @@ namespace LexiconAssigment3_TodoItConsoleApp
             Console.WriteLine(TodoSequencer.NextTodoId());
             Console.WriteLine(TodoSequencer.Reset());
             Console.WriteLine(TodoSequencer.NextTodoId());
+            Console.WriteLine("\n");
 
-            ////People
-            //People p1 = new People();
+            //People
+            Console.WriteLine("------People------");
+            
+            People p1 = new People();
 
-            //p1.AddPerson("Muzda", "Ali");
-            //p1.AddPerson("Selma", "Hamza");
-            //p1.AddPerson("Ana", "Peter");
+            p1.AddPerson("Muzda", "Ali");
+            p1.AddPerson("Selma", "Hamza");
+            p1.AddPerson("Ana", "Peter");
 
-            //Person[] allPerson = p1.FindAll();
-            //Console.WriteLine("---------- Find all added people :----------");
-            //foreach (Person item in allPerson)
-            //{
-            //    Console.WriteLine(item.PrintInfo());
-            //}
-            //Console.WriteLine("\n");
+            Person[] allPerson = p1.FindAll();
 
-            //Console.WriteLine("----------Find person with id 1 :----------");
-            //Console.WriteLine(p1.FindById(1).PrintInfo());
-            //Console.WriteLine("\n");
+            Console.WriteLine("Find all added people:");
+            foreach (Person item in allPerson)
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
-            //p1.Clear();
-            //Console.WriteLine("----------Legth of Person array after calling Clear method :----------");
-            //Console.WriteLine($"Check length: {p1.Size()}");
-            //Console.WriteLine("\n");
+            Console.WriteLine("Find person with id 1 :");
+            Console.WriteLine(p1.FindById(1).PrintInfo());
+            Console.WriteLine("\n");
 
-            //Console.WriteLine("----------Add new person to the Person array :----------");
-            //p1.AddPerson("Muzda", "Ali");
-            //p1.AddPerson("Selma", "Hamza");
-            //p1.AddPerson("Ana", "Peter");
+            p1.Clear();
+            Console.WriteLine($"Legth of Person array after calling Clear method for the first time: {p1.Size()}");
 
-            //Person[] person2 = p1.FindAll();
+            Console.WriteLine("New people added to the Person array :");
+            p1.AddPerson("Muzda", "Ali");
+            p1.AddPerson("Selma", "Hamza");
+            p1.AddPerson("Ana", "Peter");
 
-            //foreach (var item in person2)
-            //{
-            //    Console.WriteLine(item.PrintInfo());
-            //}
-            //Console.WriteLine("\n");
+
+            foreach (var item in p1.FindAll())
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
+
+            p1.Clear();
+            Console.WriteLine($"Legth of Person array after calling Clear method for the second time: {p1.Size()}");
+
+            Console.WriteLine("New people added to the Person array :");
+            p1.AddPerson("Ana", "John");
+            p1.AddPerson("Christina", "Wo");
+            p1.AddPerson("Yacob", "Mellese");
+
+            foreach (var item in p1.FindAll())
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
             ////TodoItems
             //TodoItems todoItems = new TodoItems();
