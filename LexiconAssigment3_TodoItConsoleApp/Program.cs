@@ -1,4 +1,4 @@
-﻿//using LexiconAssigment3_TodoItConsoleApp.Data;
+﻿using LexiconAssigment3_TodoItConsoleApp.Data;
 using LexiconAssigment3_TodoItConsoleApp.Model;
 using System;
 
@@ -24,12 +24,14 @@ namespace LexiconAssigment3_TodoItConsoleApp
             Console.WriteLine(todo2.PrintInfo());
             Console.WriteLine("\n");
 
-            ////PersonSequencer
-            ////Console.WriteLine(PersonSequencer.PersonId);
-            //Console.WriteLine(PersonSequencer.NextPersonId());
-            //Console.WriteLine(PersonSequencer.NextPersonId());
-            //Console.WriteLine(PersonSequencer.Reset());
-            //Console.WriteLine(PersonSequencer.NextPersonId());
+            //PersonSequencer
+            Console.WriteLine("------PersonSequencer------");
+            //Console.WriteLine(PersonSequencer.PersonId);
+            Console.WriteLine(PersonSequencer.NextPersonId());
+            Console.WriteLine(PersonSequencer.NextPersonId());
+            Console.WriteLine(PersonSequencer.Reset());
+            Console.WriteLine(PersonSequencer.NextPersonId());
+            Console.WriteLine("\n");
 
             ////TodoSequencer
             ////Console.WriteLine(TodoSequencer.TodoId);
