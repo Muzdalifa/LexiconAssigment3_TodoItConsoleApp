@@ -57,7 +57,5 @@ namespace LexiconAssigment3_TodoItConsoleApp.Model
         {
             return $"Person {personId} : {FirstName} {LastName}";
         }
-
-
     }
 }
