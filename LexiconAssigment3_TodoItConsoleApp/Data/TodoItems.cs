@@ -86,10 +86,10 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             return Array.FindAll(todos, (todo) => todo.Assignee == null);
         }
 
-        //public Todo[] RemoveItemInTodoItems(int id)
-        //{
-        //    todos =  Array.FindAll(todos, todo => todo?.TodoId != id);
-        //    return todos;
-        //}
+        public Todo[] RemoveItemInTodoItems(int id)
+        {
+            todos = Array.FindAll(todos, todo => todo?.TodoId != id);
+            return todos;
+        }
     }
 }

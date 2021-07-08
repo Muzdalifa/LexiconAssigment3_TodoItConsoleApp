@@ -61,11 +61,11 @@ namespace LexiconAssigment3_TodoItConsoleApp.Data
             PersonSequencer.Reset();
         }
 
-        //public Person[] RemoveItemInPersonArray(int id)
-        //{
-        //    persons = Array.FindAll(persons, person => person?.PersonId != id);
-        //    return persons;
-        //}
+        public Person[] RemoveItemInPersonArray(int id)
+        {
+            persons = Array.FindAll(persons, person => person?.PersonId != id);
+            return persons;
+        }
 
     }
 }

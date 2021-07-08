@@ -199,15 +199,33 @@ namespace LexiconAssigment3_TodoItConsoleApp
             }
             Console.WriteLine("\n");
 
-            //todoItems.RemoveItemInTodoItems(2);
+            //Remove todo using todoId 2 in array
+            todoItems.RemoveItemInTodoItems(2);
 
-            //Console.WriteLine("----------Todo after removing index 2:----------");
-            //foreach (var item in TodoItems.Todo)
-            //{
-            //    Console.WriteLine(item?.PrintInfo());
-            //}
-            //Console.WriteLine("\n");
+            Console.WriteLine("Todo after removing index 2 : ");
+            foreach (var item in TodoItems.Todo)
+            {
+                Console.WriteLine(item?.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
+            //display all people in person array before removing one index
+            Console.WriteLine("All people in Person array:");
+            foreach (Person item in p1.FindAll())
+            {
+                Console.WriteLine(item.PrintInfo());
+            }
+            Console.WriteLine("\n");
+
+            //Remove person using personId 2 in array
+            p1.RemoveItemInPersonArray(2);
+
+            Console.WriteLine("Person array after removing index 2 : ");
+            foreach (var item in People.Persons)
+            {
+                Console.WriteLine(item?.PrintInfo());
+            }
+            Console.WriteLine("\n");
 
         }
 

@@ -151,30 +151,31 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
             Assert.True(People.Persons.Length == 0);
         }
 
-        //[Fact]
-        //public void RemovePersonWorkCorrectly()
-        //{
-        //    //Arrange
-        //    People p1 = new People();
-        //    int id = 2;
-        //    Person removedPerson = new Person(2, "Selma", "Hamza");
+        [Fact]
+        public void RemovePersonWorkCorrectly()
+        {
+            //Arrange
+            People p1 = new People();
+            int id = 2;
+            Person removedPerson = new Person(2, "Selma", "Hamza");
 
-        //    Person expected1 = new Person(1, "Muzda", "Ali");
-        //    Person expected2 = new Person(3, "Ana", "Peter");
+            Person expected1 = new Person(1, "Muzda", "Ali");
+            Person expected2 = new Person(3, "Ana", "Peter");
 
-        //    p1.AddPerson("Muzda", "Ali");
-        //    p1.AddPerson("Selma", "Hamza");
-        //    p1.AddPerson("Ana", "Peter");
+            p1.Clear();
+            p1.AddPerson("Muzda", "Ali");
+            p1.AddPerson("Selma", "Hamza");
+            p1.AddPerson("Ana", "Peter");
 
-        //    //Act
-        //    Person[] result = p1.RemoveItemInPersonArray(id);
+            //Act
+            Person[] result = p1.RemoveItemInPersonArray(id);
 
-        //    //Assert
-        //    Assert.True(result.Length == 2);
+            //Assert
+            Assert.True(result.Length == 2);
 
-        //    Assert.False(result[1].PersonId == removedPerson.PersonId);
-        //    Assert.True(result[0].PersonId == expected1.PersonId);
-        //    Assert.True(result[1].PersonId == expected2.PersonId);
-        //}
+            Assert.False(result[1].PersonId == removedPerson.PersonId);
+            Assert.True(result[0].PersonId == expected1.PersonId);
+            Assert.True(result[1].PersonId == expected2.PersonId);
+        }
     }
 }

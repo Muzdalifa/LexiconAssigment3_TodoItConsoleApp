@@ -237,32 +237,32 @@ namespace LexiconAssigment3_TodoItConsoleApp.Tests
             Assert.True(result.Length == 2);
         }
 
-        //[Fact]
-        //public void RemoveItemInTodoItemsWorkCorrectly()
-        //{
-        //    //Arrange
-        //    TodoItemsTestData();
-        //    Todo[] allTodo = _todoItems.FindAll();
+        [Fact]
+        public void RemoveItemInTodoItemsWorkCorrectly()
+        {
+            //Arrange
+            TodoItemsTestData();
+            Todo[] allTodo = _todoItems.FindAll();
 
-        //    int id = 1;
-        //    Todo removedTodo = new Todo(1, "Going supermarket");
-        //    Todo expected2 = new Todo(2, "Doing assignment");
-        //    Todo expected3 = new Todo(3, "Greet friends");
-        //    Todo expected4 = new Todo(4, "Playing football");
-        //    Todo expected5 = new Todo(5, "Going saloon to make hair");
+            int id = 1;
+            Todo removedTodo = new Todo(1, "Going supermarket");
+            Todo expected2 = new Todo(2, "Doing assignment");
+            Todo expected3 = new Todo(3, "Greet friends");
+            Todo expected4 = new Todo(4, "Playing football");
+            Todo expected5 = new Todo(5, "Going saloon to make hair");
 
-        //    //Act
-        //    Todo[] result = _todoItems.RemoveItemInTodoItems(id);
+            //Act
+            Todo[] result = _todoItems.RemoveItemInTodoItems(id);
 
-        //    //Assert
-        //    Assert.True(result.Length == 4);
+            //Assert
+            Assert.True(result.Length == 4);
 
-        //    Assert.False(result[0].TodoId ==  removedTodo.TodoId);
-        //    Assert.True(result[0].TodoId == expected2.TodoId);
-        //    Assert.True(result[1].TodoId == expected3.TodoId);
-        //    Assert.True(result[2].TodoId == expected4.TodoId);
-        //    Assert.True(result[3].TodoId == expected5.TodoId);           
-        //}
+            Assert.False(result[0].TodoId == removedTodo.TodoId);
+            Assert.True(result[0].TodoId == expected2.TodoId);
+            Assert.True(result[1].TodoId == expected3.TodoId);
+            Assert.True(result[2].TodoId == expected4.TodoId);
+            Assert.True(result[3].TodoId == expected5.TodoId);
+        }
 
         public Todo[] TodoItemsTestData()
         {
